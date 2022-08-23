@@ -1,0 +1,410 @@
+// google fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Moonrocks&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    border: none; outline: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+$orange:#FFA500;
+$white:#fff;
+$black:#333;
+$light-color:#777;
+$border: .1rem solid $orange;
+$box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: $black;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: $orange;
+        border-radius: 1rem;
+    }
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+}
+
+@mixin titletext($titlesize){
+    font-size: $titlesize;
+    color: $black;
+    text-transform: capitalize;
+}
+
+
+@mixin graphtext($graphsize){
+    font-size: $graphsize;
+    color: $light-color;
+    line-height: 2;
+}
+
+.heading{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include titletext(5rem);
+    text-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+
+
+    span{
+        color: $orange;
+    }
+}
+
+
+
+.btn{
+    border: $border;
+    margin-top: 1rem;
+    padding: .5rem;
+    padding-left: 1rem;
+    border-radius: .5rem;
+    display: inline-block;
+    color: $orange;
+    box-shadow: $box-shadow;
+    font-size: 1.7rem; cursor: pointer;
+
+    span{
+        padding:.7rem 1rem;
+        border-radius: .5rem;
+        background: $orange;
+        color: #fff;
+        margin-left: .5rem;
+    }
+}
+
+
+.btn:hover{
+    background: $orange;
+    color: #fff;
+}
+
+.btn:hover span{
+    color: $orange;
+    background: #fff;
+    margin-left: 1rem;
+}
+
+section{
+    padding: 2rem 4%;
+}
+
+// header section
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: $orange;
+    padding: 1.5rem 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: $box-shadow;
+
+    .logo{
+        @include titletext(2.5rem);
+        color: $black;
+        font-weight: bolder;
+    }
+
+    #menu-btn{
+        font-size: 2.5rem;
+        color: $black;
+        cursor: pointer;
+        display: none;
+        &:hover{
+            transform: rotate(180deg);
+        }
+    }
+
+    .navbar a{
+        margin: 0 2rem;
+        @include graphtext(1.9rem);
+        color: $white;
+    
+        &:hover{
+            color:$orange;
+        }
+    }
+
+}
+
+
+// home section
+
+.home{
+    margin-top: 11rem;
+    display: flex; flex-wrap: wrap-reverse;
+    align-items: center; gap:2rem;
+
+    .image{
+        flex: 1 1 40rem;
+    
+        img{
+            width: 100%;
+        }
+    }
+
+    .content{
+        flex: 1 1 40rem;
+    
+        h3{
+            @include titletext(5rem);
+        }
+
+        p{
+            @include graphtext(1.5rem);
+        }
+    }
+}
+
+
+// about section
+
+.about{
+    display: flex; flex-wrap: wrap;
+    align-items: center; gap:2rem;
+
+    .image{
+        flex: 1 1 40rem;
+    
+        img{
+            width: 100%;
+        }
+    }
+
+    .content{
+        flex: 1 1 40rem;
+    
+        h3{
+            @include titletext(4rem);
+            margin-bottom: 2rem;
+        }
+
+        p{
+            @include graphtext(1.6rem);
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+// module section
+
+.module{
+    background: #efefef;
+    .box-container{
+        @include grid(25rem);
+    
+        .box{
+            box-shadow: 0 1rem .5rem rgba(0,0,0,.1);
+            align-items: center;
+            justify-content: center;
+            border-radius: .5rem;
+            background: #fff;
+            img{
+                border-radius: .5rem;
+                padding: 1rem;
+                width: 100%;
+                height: 22rem;
+            }
+
+            h3{
+                @include titletext(2rem);
+                padding-left: 1rem
+            }
+
+            p{
+                @include graphtext(1.5rem);
+                padding: 1rem;
+            }
+
+            .stars{
+                margin-left: 1rem;
+                i{
+                font-size: 2rem;
+                color: $orange;
+                }
+            }
+
+            .btn{
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+// contact section
+
+.contact{
+    .icons-container{
+        margin-bottom: 2rem;
+        @include grid(20rem);
+    
+        .icon{
+            border-radius: 1rem;
+            text-align: center;
+            padding: 3rem 2rem;
+            border: $border;
+            background: $orange;
+       
+            i{
+                height: 6rem;
+                width: 6rem;
+                line-height: 6rem;
+                font-size: 2rem;
+                border-radius: 50%;
+                color: $white;
+                background-color: $black;
+            }
+
+            h3{
+                @include titletext(2rem);
+                margin-top: 1rem
+            }
+
+            p{
+                @include graphtext(1.2rem);
+                padding: .5rem 0;
+                color: $white;
+            }
+        }
+    }
+}
+
+// footer section
+
+.footer{
+    padding: 2rem 4%;
+    background: #efefef;
+
+    .box-container{
+        @include grid(25rem);
+    
+        .box{
+
+            .share{
+                a{
+                    font-size: 2rem;
+                    margin-left: .5rem;
+                    color: $orange;
+                
+                    &:hover{
+                        color: $black;
+                    }
+                }
+            }
+
+            h3{
+                font-weight: 500;
+                @include titletext(2.2rem);
+                padding: 1rem 0;
+            }
+
+            .link{
+                @include graphtext(1.5rem);
+                padding: .5rem 0;
+                display: block;
+            
+            
+                &:hover{
+                    color: $orange;
+                    text-decoration: underline;
+                }
+            }
+
+            p{
+                @include graphtext(1.5rem);
+                padding: 1rem 0;
+            }
+        }
+    }
+
+    .credit{
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        @include titletext(1.7rem);
+        border-top: .1rem solid #444;
+        
+        span{
+            color: $orange;
+        }
+    }
+}
+
+
+
+
+
+// media queries
+
+@media (max-width:991px){
+
+    html{
+        font-size: 52%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px){
+
+    .header{
+        #menu-btn{
+            display: inline-block;
+        }
+    
+        .navbar{
+            position: fixed;
+            top: 7rem; right: -110%;
+            width: 100%;
+            background: $black;
+        
+            &.active{
+              right: 0;
+            }
+
+            a{
+                display: block;
+                text-align: center;
+                margin: 2rem 0;
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 48%;
+    }
+}
