@@ -107,10 +107,10 @@ section {
   font-size: 1.9rem;
   color: #777;
   line-height: 2;
-  color: #fff;
+  color: #333;
 }
 .header .navbar a:hover {
-  color: #FFA500;
+  color: #fff;
 }
 
 .home {
@@ -324,7 +324,7 @@ section {
     top: 7rem;
     right: -110%;
     width: 100%;
-    background: #333;
+    background: #FFA500;
   }
   .header .navbar.active {
     right: 0;

@@ -138,10 +138,10 @@ section{
     .navbar a{
         margin: 0 2rem;
         @include graphtext(1.9rem);
-        color: $white;
+        color: $black;
     
         &:hover{
-            color:$orange;
+            color:$white;
         }
     }
 
@@ -385,7 +385,7 @@ section{
             position: fixed;
             top: 7rem; right: -110%;
             width: 100%;
-            background: $black;
+            background: $orange;
         
             &.active{
               right: 0;
